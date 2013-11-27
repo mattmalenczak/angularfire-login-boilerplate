@@ -43,3 +43,8 @@ Once you have created your user, click on Security and paste this in for the rul
 This will restrict the ability to read/write data to only the logged-in user.
 
 Your Firebase user login + data system is now ready to go!  Upload the boilerplate files to your web host, making sure to update js/controllers.js (line 9) with the correct URL to your Firebase.
+
+Demo
+----
+
+http://www.malenczak.com/angularfire-login-boilerplate/
