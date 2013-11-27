@@ -1,0 +1,50 @@
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">AngularFire Login Boilerplate</a>
+				</div>
+				<div class="navbar-right navbar-text">
+					{{greeting}}
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div ng-show="user && user.id">
+						<form role="form">
+							<div class="form-group">
+								<label for="firstName">First Name</label>
+								<input type="text" class="form-control" id="firstName" ng-model="userData.name.first" placeholder="First Name">
+							</div>
+							<div class="form-group">
+								<label for="lastName">Last Name</label>
+								<input type="text" class="form-control" id="lastName" ng-model="userData.name.last" placeholder="Last Name">
+							</div>
+							<button class="btn btn-primary" ng-click="logout()">Log Out</a>
+							<img ng-show="loginBusy" src="img/loading.gif" style="margin: 0 10px;" />
+						</form>
+					</div>
+					<div ng-show="user && !user.id">
+						<form role="form">
+							<div class="form-group">
+								<label for="inputEmail">Email address</label>
+								<input type="email" class="form-control" id="inputEmail" ng-model="inputEmail" placeholder="Email">
+							</div>
+							<div class="form-group">
+								<label for="inputPassword">Password</label>
+								<input type="password" class="form-control" id="inputPassword" ng-model="inputPassword" placeholder="Password">
+							</div>
+							<button type="submit" class="btn btn-primary" ng-submit="login()" ng-click="login()">Log In</button> 
+							<button class="btn btn-default" ng-click="register()">Register</button>
+							<img ng-show="loginBusy" src="img/loading.gif" style="margin: 0 10px;" />
+						</form>
+					</div>
+					<p class="alert alert-danger" ng-show="loginMessage" style="margin-top: 20px;">{{loginMessage}}</p>
+				</div>
+				<div class="col-md-8">
+					<p><strong>User:</strong> {{user}}</p>
+					<p><strong>User Data:</strong> {{userData}}</p>
+				</div>
+			</div>
+		</div>
